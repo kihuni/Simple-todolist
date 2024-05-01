@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDoList</title>
     <style>
         body {
@@ -11,14 +12,14 @@
             background-color: #f5f5f5;
         }
         .container {
-            max-width: 800px;
+            max-width: 90%; /* Adjusted for smaller screens */
             margin: auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        h1 {
+        h1, h2 {
             margin-top: 0;
         }
         form {
@@ -31,7 +32,8 @@
         input[type="text"],
         input[type="date"],
         textarea,
-        input[type="checkbox"] {
+        input[type="checkbox"],
+        input[type="submit"] {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
