@@ -69,6 +69,9 @@
                 {% else %}
                     <span style="color: red;">Pending</span>
                 {% endif %}
+                {% if task.assigned_to %}
+                    - Assigned to: {{ task.assigned_to.username }}
+                {% endif %}
             </li>
             {% endfor %}
         </ul>
@@ -84,6 +87,13 @@
             <input type="date" id="due_date" name="due_date" required><br>
             <label for="completed">Completed:</label>
             <input type="checkbox" id="completed" name="completed">
+            <label for="assigned_to">Assigned To:</label>
+            <select id="assigned_to" name="assigned_to">
+                <option value="" selected>None</option>
+                {% for user in users %}
+                <option value="{{ user.id }}">{{ user.username }}</option>
+                {% endfor %}
+            </select>
             <input type="submit" value="Add Task">
         </form>
     </div>
